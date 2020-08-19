@@ -2,7 +2,11 @@ class CalendarsController < ApplicationController
 
   # １週間のカレンダーと予定が表示されるページ
   def index
+<<<<<<< Updated upstream
     getWeek
+=======
+     get_week
+>>>>>>> Stashed changes
     @plan = Plan.new
   end
 
@@ -34,9 +38,12 @@ class CalendarsController < ApplicationController
       plan = @plans.map do |plan|
         plans.push(plan.plan) if plan.date == @todays_date + x
       end
+<<<<<<< Updated upstream
       days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => plans}
+=======
+      days = { month: (@todays_date + x).month, date: (@todays_date + x).day, wday: wdays[(@todays_date + x).wday], plans: plans }
+>>>>>>> Stashed changes
       @week_days.push(days)
     end
-
   end
 end
